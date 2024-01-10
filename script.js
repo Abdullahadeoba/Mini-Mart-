@@ -38,3 +38,48 @@ function addItem(){
     }
 }
 
+// function addFront(){
+//     if(inp.value === ""){
+//         error.style.display = "block"
+//     }else{
+//     error.style.display = "none"
+//     cart.unshift(inp.value)
+//     document.getElementById("inp").value = ""
+//     show.innerHTML = cart
+//     show.innerHTML = ""
+//     for(i = 0; i < cart.length; i++){
+//         show.innerHTML += `<p>${i + 1}.${cart[i]}</p>`
+//     }
+//     }
+    
+// }
+// // function addBack(){
+// //     cart.push(show.innerHTML)
+// //     document.getElementById("inp").value = ""
+// //     show.innerHTML = cart
+// //     show.innerHTML = ""
+// //     for(i = 0; i < cart.length; i++){
+// //         show.innerHTML += `<p>${i + 1}.${cart[i]}</p>`
+// //     }
+// // }
+// function deleteFront(){
+//     cart.shift(show.innerHTML)
+//     document.getElementById("inp").value = ""
+//     show.innerHTML = cart
+//     show.innerHTML = ""
+//     for(i = 0; i < cart.length; i++){
+//         show.innerHTML += `<p>${i + 1}.${cart[i]}</p>`
+//     }
+// }
+// function deleteBack(){  
+//     cart.pop(show.innerHTML)
+//     document.getElementById("inp").value = ""
+//     show.innerHTML = cart
+//     show.innerHTML = ""
+//     for(i = 0; i < cart.length; i++){
+//         show.innerHTML += `<p>${i + 1}.${cart[i]}</p>`
+//     }
+// }
+
+
+
