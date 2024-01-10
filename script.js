@@ -80,6 +80,3 @@ function deleteBack(){
         show.innerHTML += `<p>${i + 1}.${cart[i]}</p>`
     }
 }
-
-
-
