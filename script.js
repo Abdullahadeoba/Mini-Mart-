@@ -32,7 +32,9 @@ function addItem(){
         console.log(cart);
         show.innerHTML = ""
         for(i = 0; i < cart.length; i++){
-            show.innerHTML += `<p>${i + 1}. ${cart[i]}</p>`
+            show.innerHTML += `
+                <p>${i + 1}. ${cart[i]}</p>
+            `
         }
         
     }
@@ -48,7 +50,9 @@ function addFront(){
     show.innerHTML = cart
     show.innerHTML = ""
     for(i = 0; i < cart.length; i++){
-        show.innerHTML += `<p>${i + 1}.${cart[i]}</p>`
+        show.innerHTML += `
+            <p>${i + 1}.${cart[i]}</p>
+        `
     }
     }
     
@@ -59,7 +63,9 @@ function addBack(){
     show.innerHTML = cart
     show.innerHTML = ""
     for(i = 0; i < cart.length; i++){
-        show.innerHTML += `<p>${i + 1}.${cart[i]}</p>`
+        show.innerHTML += `
+            <p>${i + 1}.${cart[i]}</p>
+        `
     }
 }
 function deleteFront(){
@@ -68,7 +74,9 @@ function deleteFront(){
     show.innerHTML = cart
     show.innerHTML = ""
     for(i = 0; i < cart.length; i++){
-        show.innerHTML += `<p>${i + 1}.${cart[i]}</p>`
+        show.innerHTML += `
+             <p>${i + 1}.${cart[i]}</p>
+        `
     }
 }
 function deleteBack(){  
@@ -77,6 +85,8 @@ function deleteBack(){
     show.innerHTML = cart
     show.innerHTML = ""
     for(i = 0; i < cart.length; i++){
-        show.innerHTML += `<p>${i + 1}.${cart[i]}</p>`
+        show.innerHTML += `
+            <p>${i + 1}.${cart[i]}</p>
+        `
     }
 }
