@@ -29,7 +29,7 @@ function addItem(){
         cart.push(inp.value)
         document.getElementById("inp").value = ''
         show.innerHTML = ""
-        console.log(cart);
+        // console.log(cart);
         show.innerHTML = ""
         for(i = 0; i < cart.length; i++){
             show.innerHTML += `
