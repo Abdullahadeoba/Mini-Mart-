@@ -10,8 +10,8 @@ function addItem(){
         cart.push(inp.value)
         document.getElementById("inp").value = ''
         show.innerHTML = ""
-        success.innerHTML = "Item added succesfully"
-        success.style.display = "block"
+        error.innerHTML = "Item added succesfully"
+        error.style.display = "block"
         // console.log(cart);
         displayCart()
         
@@ -26,8 +26,8 @@ function addFront(){
     cart.unshift(inp.value)
     document.getElementById("inp").value = ""
     show.innerHTML = cart
-    success.innerHTML = "Item added succesfully"
-    success.style.display = "block"
+    error.innerHTML = "Item added successfully"
+    error.style.display = "block"
     displayCart()
     }
 }
@@ -45,8 +45,8 @@ function editAny(){
         cart.splice(userIndex-1,1,replacement)
          show.innerHTML = cart
         document.getElementById("inp").value = ""
-        success.innerHTML = "Item added succesfully"
-        success.style.display = "block"
+        error.innerHTML = "Item added succesfully"
+        error.style.display = "block"
         displayCart()
     }
     }
@@ -63,8 +63,8 @@ function deleteFront(){
         document.getElementById("inp").value = ""
         show.innerHTML = cart
         show.innerHTML = ""
-        success.innerHTML= "First item deleted successfully"
-        // success.style.display = "block"
+        error.innerHTML = "First item deleted errorfully"
+        // error.style.display = "block"
         displayCart()
     }
   
@@ -77,7 +77,7 @@ function deleteBack(){
     cart.pop(show.innerHTML)
     document.getElementById("inp").value = ""
     show.innerHTML = cart
-    success.innerHTML = "Last item deleted successfully"
+    error.innerHTML = "Last item deleted successfully"
     displayCart()
 }
 }
@@ -91,8 +91,8 @@ function deleteAny(){
     var userResponse = confirm("Are you sure you want to delete!!!")
     if (deleteIndex !== "" && userResponse == true){
       cart.splice(deleteIndex-1,1)
-    success.innerHTML = "item deleted successfully"
-    success.style.display = "block"
+    error.innerHTML = "item deleted successfully"
+    error.style.display = "block"
       displayCart()
     } else{
       alert("God save you ")
@@ -109,8 +109,8 @@ function deleteAny(){
       var userResponse = confirm("Are you sure you want to delete!!!")
       if (userResponse = true) {
         cart.splice(0)
-        success.innerHTML = `All Cart has been deleted successfully`
-        success.style.display = "block"
+        error.innerHTML = `All Cart has been deleted successfully`
+        error.style.display = "block"
       }else {
         alert("Ori Yo E")
       }
@@ -151,19 +151,37 @@ function displayCart(){
                 <td>${i+1}</td>
                 <td>${cart[i]}</td>
                 <td>
-                   <button  onclick="deleteUser(${i})" class="btn btn-danger"><i class="fas fa-trash"></i>Delete</button>
+                   <button  onclick="deleteUser(${i})" class="btn btn-danger"></i>Delete</button>
+                   <button  onclick="editUser(${i})" class="btn btn-warning"></i>Edit</button>
                    </td>
                    </tr>
                    `   
-                //    <button  onclick="editUser(${i})" class="btn btn-warning"><i class="fas fa-edit"></i>Edit</button>
         }
     } 
 }
 
 function deleteUser(){
     cart.splice(cart-1,1)
-    success.innerHTML = "Item deleted successfully"
-    error.style.display = "none"
+    error.innerHTML = "Item deleted successfully"
     displayCart()
  }
  
+ 
+//  function editUser(){
+//    var edit = document.getElementById("inp").value
+
+//    if(edit = true){
+//     updateDtails()
+//    }
+
+//  }
+
+//  function updateDtails(){
+//     var newDetails = {
+//     cart : editProduct.value,
+//    }
+//     cart.splice(i,1,newDetails)
+//     // console.log(allStudents)
+//     displayCart()
+//     editDiv.innerHTML = ""    
+//  }
