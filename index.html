@@ -33,9 +33,6 @@
     h1{
         font-family:Georgia, 'Times New Roman', Times, serif ;
     }
-  /*  input{
-        padding: 10px 10px 15px 15px;
-    } */
 </style>
 <body>
     <div class="container-fluid mx-auto col-lg-7 shadow-lg mt-lg-5 mt-2 p-3">
@@ -46,16 +43,16 @@
         <button class="w-100 btn btn-outline-danger my-2 btn-sm fw-bolder" onclick="addItem()">Submit</button>
         <div class="disp"></div>
         <div class="editDiv" onclick="editDiv()"></div>
-        <table class="table table-bordered border-danger" id="show">
+        <table class="table table-ordered border-danger" id="show">
     
         </table>
         
         <div class=" container-fluid btn mx-auto col-12 shadow-sm name ">
-            <button class="mt-4 w-25 btn btn-primary  mx-auto " onclick="addFront()">Add to front</button>
-            <button class="mt-4 w-25 btn btn-dark  mx-auto"  onclick="editAny()">Edit Item</button>
-            <!-- <button class="mt-4 w-25 btn btn-info  mx-auto"  onclick="deleteFront()">Delete front</button>  -->
-             <!-- <button class="mt-4 w-25 btn btn-success  mx-auto" onclick="deleteBack()">Delete from back</button>  -->
-             <!-- <button class="mt-4 w-25 btn btn-secondary  mx-auto" onclick="deleteAny()">Delete Any</button>  -->
+            <button class="mt-4 w-25 btn btn-primary  mx-auto " onclick="addFront()">Add to top</button>
+            <button class="mt-4 w-25 btn btn-dark  mx-auto"  onclick="editAny()">Edit Any</button>
+            <button class="mt-4 w-25 btn btn-info  mx-auto"  onclick="deleteFront()">Delete front</button> 
+             <button class="mt-4 w-25 btn btn-success  mx-auto" onclick="deleteBack()">Delete from back</button> 
+             <button class="mt-4 w-25 btn btn-secondary  mx-auto" onclick="deleteAny()">Delete Any</button> 
             <button class="mt-4 w-25 btn btn-primary  mx-auto" onclick="deleteAll()">Delete All</button>
     
         </div> 

@@ -78,6 +78,7 @@ function deleteBack(){
     document.getElementById("inp").value = ""
     show.innerHTML = cart
     error.innerHTML = "Last item deleted successfully"
+    error.style.display = "block"
     displayCart()
 }
 }
@@ -103,20 +104,15 @@ function deleteAny(){
   function deleteAll() {
     if(show.innerHTML == ""){
         error.innerHTML = "No item to be deleted"
-        error.style.display = "block"
+        error.style.display = "block"    
     }
-    else{
-      var userResponse = confirm("Are you sure you want to delete!!!")
-      if (userResponse = true) {
-        // show.innerHTML = cart.splice(0)
-        error.innerHTML = `All Cart has been deleted successfully`
-        error.style.display = "block"
-      }else {
-        alert("Ori Yo E")
+    else {
+          cart.splice(0)
+          document.getElementById("show").value = ""
+          error.innerHTML = `All Cart has been deleted successfully`
+          error.style.display = "block"
       }
-
-    } 
-  }
+    }
 
 // function displayCart() {
 //     show.innerHTML = ""
