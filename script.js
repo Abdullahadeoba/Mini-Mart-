@@ -26,6 +26,9 @@ function addFront(){
     }
 }
 function editAny(){
+    if(show.innerHTML == ""){
+        error.innerHTML = "No item to be edited"
+    }else{
     var userIndex = prompt("Enter the index you want to change")
     var replacement = prompt("What do you want to replace it with?")
     if(userIndex ==""||replacement=="" ){
@@ -35,6 +38,7 @@ function editAny(){
          show.innerHTML = cart
         document.getElementById("inp").value = ""
         displayCart()
+    }
     }
 }
 
