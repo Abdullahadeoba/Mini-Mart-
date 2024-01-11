@@ -3,12 +3,15 @@ var cart = []
 function addItem(){
     if(inp.value === ""){
         error.innerHTML = "Input field cannot be empty"
+        error.style.display = "block"
     }
     else{
         error.style.display = "none"
         cart.push(inp.value)
         document.getElementById("inp").value = ''
         show.innerHTML = ""
+        success.innerHTML = "Item added succesfully"
+        success.style.display = "block"
         // console.log(cart);
         displayCart()
         
@@ -18,16 +21,21 @@ function addItem(){
 function addFront(){
     if(inp.value === ""){
         error.innerHTML = "Input field cannot be empty"
+        error.style.display = "block"
     }else{
     cart.unshift(inp.value)
     document.getElementById("inp").value = ""
     show.innerHTML = cart
+    success.innerHTML = "Item added succesfully"
+    success.style.display = "block"
     displayCart()
     }
 }
 function editAny(){
     if(show.innerHTML == ""){
         error.innerHTML = "No item to be deleted"
+        error.style.display = "block"
+        
     }else{
     var userIndex = prompt("Enter the index you want to change")
     var replacement = prompt("What do you want to replace it with?")
@@ -37,6 +45,8 @@ function editAny(){
         cart.splice(userIndex-1,1,replacement)
          show.innerHTML = cart
         document.getElementById("inp").value = ""
+        success.innerHTML = "Item added succesfully"
+        success.style.display = "block"
         displayCart()
     }
     }
@@ -46,6 +56,7 @@ function editAny(){
 function deleteFront(){
     if(show.innerHTML == ""){
         error.innerHTML = "No item to be deleted"
+        error.style.display = "block"
     }
     else{
         cart.shift(show.innerHTML)
@@ -53,6 +64,7 @@ function deleteFront(){
         show.innerHTML = cart
         show.innerHTML = ""
         success.innerHTML= "First item deleted successfully"
+        // success.style.display = "block"
         displayCart()
     }
   
@@ -73,12 +85,14 @@ function deleteBack(){
 function deleteAny(){
     if(show.innerHTML == ""){
         error.innerHTML = "No item to be deleted"
+        error.style.display = "block"
     } else{
     var deleteIndex = prompt("enter the index you want to delete")
     var userResponse = confirm("Are you sure you want to delete!!!")
     if (deleteIndex !== "" && userResponse == true){
       cart.splice(deleteIndex-1,1)
     success.innerHTML = "item deleted successfully"
+    success.style.display = "block"
       displayCart()
     } else{
       alert("God save you ")
@@ -89,12 +103,14 @@ function deleteAny(){
   function deleteAll() {
     if(show.innerHTML == ""){
         error.innerHTML = "No item to be deleted"
+        error.style.display = "block"
     }
     else{
       var userResponse = confirm("Are you sure you want to delete!!!")
       if (userResponse = true) {
         cart.splice(0)
         success.innerHTML = `All Cart has been deleted successfully`
+        success.style.display = "block"
       }else {
         alert("Ori Yo E")
       }
@@ -117,6 +133,8 @@ function deleteAny(){
 function displayCart(){
     if(cart.length==0){
     show.innerHTML = `<h1 style="text-align:center;color:white;font-weight:bolder;">There are currently No Items</h1>`
+    error.innerHTML = "No Items to be deleted"
+    error.style.display = "block"
     
     }else{
         show.innerHTML = ""
@@ -145,6 +163,7 @@ function displayCart(){
 function deleteUser(){
     cart.splice(cart-1,1)
     success.innerHTML = "Item deleted successfully"
+    error.style.display = "none"
     displayCart()
  }
  
