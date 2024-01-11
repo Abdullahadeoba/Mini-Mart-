@@ -2,7 +2,7 @@ var cart = []
 
 function addItem(){
     if(inp.value === ""){
-        error.style.display = "block"
+        error.innerHTML = "Input field cannot be empty"
     }
     else{
         error.style.display = "none"
@@ -17,9 +17,8 @@ function addItem(){
 
 function addFront(){
     if(inp.value === ""){
-        error.style.display = "block"
+        error.innerHTML = "Input field cannot be empty"
     }else{
-    error.style.display = "none"
     cart.unshift(inp.value)
     document.getElementById("inp").value = ""
     show.innerHTML = cart
@@ -41,39 +40,57 @@ function editAny(){
 
 
 function deleteFront(){
-    cart.shift(show.innerHTML)
-    document.getElementById("inp").value = ""
-    show.innerHTML = cart
-    show.innerHTML = ""
-    displayCart()
+    if(show.innerHTML == ""){
+        error.innerHTML = "No item to be deleted"
+    }
+    else{
+        cart.shift(show.innerHTML)
+        document.getElementById("inp").value = ""
+        show.innerHTML = cart
+        show.innerHTML = ""
+        success.innerHTML= "First item deleted successfully"
+        displayCart()
+    }
+  
     }
 
-function deleteBack(){  
+function deleteBack(){
+    if(show.innerHTML == ""){
+        error.innerHTML = "No item to be deleted"
+    }else{  
     cart.pop(show.innerHTML)
     document.getElementById("inp").value = ""
     show.innerHTML = cart
+    success.innerHTML = "Last item deleted successfully"
     displayCart()
+}
 }
 
 function deleteAny(){
+    if(show.innerHTML == ""){
+        error.innerHTML = "No item to be deleted"
+    } else{
     var deleteIndex = prompt("enter the index you want to delete")
     var userResponse = confirm("Are you sure you want to delete!!!")
     if (deleteIndex !== "" && userResponse == true){
       cart.splice(deleteIndex-1,1)
+    success.innerHTML = "item deleted successfully"
       displayCart()
     } else{
       alert("God save you ")
     }
+    }
   }
 
   function deleteAll() {
-    if (cart.length == 0) {
-      show.innerHTML =`<p style="text-align:center;font-weight:bold;">No Input to be deleted</p>`
-    }else{
+    if(show.innerHTML == ""){
+        error.innerHTML = "No item to be deleted"
+    }
+    else{
       var userResponse = confirm("Are you sure you want to delete!!!")
       if (userResponse = true) {
         cart.splice(0)
-        show.innerHTML = `All Cart has been deleted successfully`
+        success.innerHTML = `All Cart has been deleted successfully`
       }else {
         alert("Ori Yo E")
       }
@@ -123,8 +140,7 @@ function displayCart(){
 
 function deleteUser(){
     cart.splice(cart-1,1)
+    success.innerHTML = "Item deleted successfully"
     displayCart()
  }
- function editUser(){
-    
- }
+ 
