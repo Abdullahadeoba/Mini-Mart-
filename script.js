@@ -120,3 +120,11 @@ function displayCart(){
         }
     } 
 }
+
+function deleteUser(){
+    cart.splice(cart-1,1)
+    displayCart()
+ }
+ function editUser(){
+    
+ }
