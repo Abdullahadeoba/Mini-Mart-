@@ -10,26 +10,22 @@
     body{
         background-image: linear-gradient(to right, #a3df7a, #fa62fa);
     }
-     table{
-        width: inherit;
-        
-    } 
     tr{
         margin-bottom: 5px;
     }
     td{
         text-align: center;
-        color: rgb(248, 11, 11);
+        color:#000000;
         font-family: sans-serif;
         border-radius: 3px;
         cursor: pointer;
         border: 1px solid rgb(250, 4, 131);
     }
-   /* th{
+   th{
         color: rgb(229, 114, 114);
         height: 60px;
         text-align: center;
-    } */
+    } 
 </style>
 <body>
     <div class="container-fluid mx-auto col-lg-7 shadow-sm mt-lg-5 mt-2 p-3">
@@ -38,6 +34,7 @@
         <input type="text" class="form-control shadow-none form-control-sm my-2" id="inp">
         <button class="w-100 btn btn-outline-danger my-2 btn-sm fw-bolder" onclick="addItem()">Submit</button>
     </div>
+    <div class="disp"></div>
     <table class="container-fluid mx-auto col-lg-7 shadow-sm mt-lg-5 mt-2 p-3" id="show"></table>
     
     <div class=" container-fluid btn mx-auto col-12 my-4 p-3 shadow-sm ">

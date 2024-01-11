@@ -81,14 +81,42 @@ function deleteAny(){
     } 
   }
 
-function displayCart() {
-    show.innerHTML = ""
-    for(i = 0; i < cart.length; i++){
+// function displayCart() {
+//     show.innerHTML = ""
+//     for(i = 0; i < cart.length; i++){
+//         show.innerHTML += `
+//             <tr>
+//                 <td>${i + 1}.<td>
+//                 <td>${cart[i]}<td>
+//             <tr>
+//         `
+//     }
+// }
+
+function displayCart(){
+    if(cart.length==0){
+    show.innerHTML = `<h1 style="text-align:center;color:white;font-weight:bolder;">There are currently No Items</h1>`
+    
+    }else{
+        show.innerHTML = ""
         show.innerHTML += `
-            <tr>
-                <td>${i + 1}.<td>
-                <td>${cart[i]}<td>
-            <tr>
+        <tr>
+           <th class="table-dark">S/N</th>
+           <th class="table-dark">Items</th>
+           <th class="table-dark">Action</th>
+        </tr>
         `
-    }
+        for (let i = 0; i < cart.length; i++) {
+            show.innerHTML += `
+            <tr class="table-info">
+                <td>${i+1}</td>
+                <td>${cart[i]}</td>
+                <td>
+                   <button  onclick="deleteUser(${i})" class="btn btn-danger"><i class="fas fa-trash"></i>Delete</button>
+                   <button  onclick="editUser(${i})" class="btn btn-warning"><i class="fas fa-edit"></i>Edit</button>
+                </td>
+            </tr>
+            `   
+        }
+    } 
 }
