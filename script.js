@@ -27,7 +27,7 @@ function addFront(){
 }
 function editAny(){
     if(show.innerHTML == ""){
-        error.innerHTML = "No item to be edited"
+        error.innerHTML = "No item to be deleted"
     }else{
     var userIndex = prompt("Enter the index you want to change")
     var replacement = prompt("What do you want to replace it with?")
@@ -87,7 +87,7 @@ function deleteAny(){
   }
 
   function deleteAll() {
-    if(show.innerHTML === ""){
+    if(show.innerHTML == ""){
         error.innerHTML = "No item to be deleted"
     }
     else{
@@ -137,8 +137,8 @@ function displayCart(){
                    </td>
                    </tr>
                    `   
-                }
-                // <button  onclick="editUser(${i})" class="btn btn-warning"><i class="fas fa-edit"></i>Edit</button>
+                //    <button  onclick="editUser(${i})" class="btn btn-warning"><i class="fas fa-edit"></i>Edit</button>
+        }
     } 
 }
 
