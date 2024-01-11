@@ -30,30 +30,33 @@
     ::placeholder{
         text-align: center;
     }
+    h1{
+        font-family:Georgia, 'Times New Roman', Times, serif ;
+    }
 </style>
 <body>
-    <div class="container-fluid mx-auto col-lg-7 shadow-sm mt-lg-5 mt-2 p-3">
+    <div class="container-fluid mx-auto col-lg-7 shadow-lg mt-lg-5 mt-2 p-3">
         <h1 class="text-center text-decoration-underline my-3">Mini Mart</h1>
         <div class="alert alert-success p-2 text-center fw-bolder fs-7 "  id="success"></div>
         <div class="alert alert-danger p-2 text-center fw-bolder fs-7 "  id="error"></div>
         <input type="text" class="form-control shadow-none form-control-sm my-2" id="inp" placeholder="Input you items">
         <button class="w-100 btn btn-outline-danger my-2 btn-sm fw-bolder" onclick="addItem()">Submit</button>
-    </div>
-    <div class="disp"></div>
-    <div class="edit"></div>
-    <table class="table table-bordered border-danger" id="show">
-
-    </table>
+        <div class="disp"></div>
+        <div class="edit"></div>
+        <table class="table table-bordered border-danger" id="show">
     
-    <div class=" container-fluid btn mx-auto col-12 shadow-sm ">
-        <button class="mt-4 w-25 btn btn-primary  mx-auto " onclick="addFront()">Add item from  the front</button>
-        <button class="mt-4 w-25 btn btn-dark  mx-auto"  onclick="editAny()">Edit Item</button>
-        <button class="mt-4 w-25 btn btn-info  mx-auto"  onclick="deleteFront()">Delete item  from  the front</button>
-        <button class="mt-4 w-25 btn btn-success  mx-auto" onclick="deleteFront()">Delete item from  the back</button>
-        <button class="mt-4 w-25 btn btn-secondary  mx-auto" onclick="deleteAny()">Delete Any</button>
-        <button class="mt-4 w-25 btn btn-primary  mx-auto" onclick="deleteAll()">Delete All</button>
-
-    </div> 
+        </table>
+        
+        <div class=" container-fluid btn mx-auto col-12 shadow-sm ">
+            <button class="mt-4 w-25 btn btn-primary  mx-auto " onclick="addFront()">Add to front</button>
+            <button class="mt-4 w-25 btn btn-dark  mx-auto"  onclick="editAny()">Edit Item</button>
+            <button class="mt-4 w-25 btn btn-info  mx-auto"  onclick="deleteFront()">Delete front</button>
+            <button class="mt-4 w-25 btn btn-success  mx-auto" onclick="deleteFront()">Delete from back</button>
+            <button class="mt-4 w-25 btn btn-secondary  mx-auto" onclick="deleteAny()">Delete Any</button>
+            <button class="mt-4 w-25 btn btn-primary  mx-auto" onclick="deleteAll()">Delete All</button>
+    
+        </div> 
+    </div>
     <script src="/script.js"></script>
 </body>
 </html>
