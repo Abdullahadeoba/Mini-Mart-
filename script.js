@@ -87,7 +87,7 @@ function deleteAny(){
   }
 
   function deleteAll() {
-    if(show.innerHTML == ""){
+    if(show.innerHTML === ""){
         error.innerHTML = "No item to be deleted"
     }
     else{
