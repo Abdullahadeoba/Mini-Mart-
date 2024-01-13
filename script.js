@@ -147,8 +147,8 @@ function displayCart(){
                 <td>${i+1}</td>
                 <td>${cart[i]}</td>
                 <td>
-                   <button  onclick="deleteUser(${i})" class="btn btn-danger"></i>Delete</button>
-                   <button  onclick="editUser(${i})" class="btn btn-warning"></i>Edit</button>
+                   <button  onclick="deleteUser(${i})" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                   <button  onclick="editUser(${i})" class="btn btn-warning"><i class="fas fa-edit"></i></button>
                    </td>
                    </tr>
                    `   
