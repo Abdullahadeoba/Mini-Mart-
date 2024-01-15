@@ -46,19 +46,42 @@
         <div class="disp"></div>
         <div class="editDiv" onclick="editDiv()"></div>
         <table class="table table-ordered border-danger" id="show">
-    
         </table>
         
         <div class=" container-fluid btn mx-auto col-12 shadow-sm name ">
             <button class="mt-4 w-25 btn btn-primary  mx-auto " onclick="addFront()">Add to top</button>
             <button class="mt-4 w-25 btn btn-dark  mx-auto"  onclick="editAny()">Edit Any</button>
             <button class="mt-4 w-25 btn btn-info  mx-auto"  onclick="deleteFront()">Delete front</button> 
-             <button class="mt-4 w-25 btn btn-success  mx-auto" onclick="deleteBack()">Delete from back</button> 
-             <button class="mt-4 w-25 btn btn-secondary  mx-auto" onclick="deleteAny()">Delete Any</button> 
+            <button class="mt-4 w-25 btn btn-success  mx-auto" onclick="deleteBack()">Delete from back</button> 
+            <button class="mt-4 w-25 btn btn-secondary  mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="deleteAny()">Delete Any</button> 
             <button class="mt-4 w-25 btn btn-primary  mx-auto" onclick="deleteAll()">Delete All</button>
-    
+            
         </div> 
     </div>
+    <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Pls Which Item Did You Want To Delete</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="alert alert-danger mb-2 p-1 text-center fw-bolder" id="Modalerror" style="display: none;">Input Field Cannot Be Empty</div>
+        <input type="number" class="form-control shadow-sm p-1" placeholder="Enter The Index Number You Want To Delete" id="input">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="deleteUser()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 </html>

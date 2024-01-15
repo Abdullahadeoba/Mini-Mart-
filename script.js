@@ -83,23 +83,30 @@ function deleteBack(){
 }
 }
 
-function deleteAny(){
-    if(show.innerHTML == ""){
-        error.innerHTML = "No item to be deleted"
-        error.style.display = "block"
-    } else{
-    var deleteIndex = prompt("enter the index you want to delete")
-    var userResponse = confirm("Are you sure you want to delete!!!")
-    if (deleteIndex !== "" && userResponse == true){
-          cart.splice(deleteIndex-1,1)
-        error.innerHTML = "item deleted successfully"
-        error.style.display = "block"
-         displayCart()
-    } else{
-      alert("God save you ")
+ function deleteAny(){
+
+    if(input.value == "" ){
+        Modalerror.style.display ="block" 
+    }else{
+        cart.splice(cart-1,1)
+        displayCart()
     }
-    }
-  }
+//     if(show.innerHTML == ""){
+//         error.innerHTML = "No item to be deleted"
+//         error.style.display = "block"
+//     } else{
+//     var deleteIndex = prompt("enter the index you want to delete")
+//     var userResponse = confirm("Are you sure you want to delete!!!")
+//     if (deleteIndex !== "" && userResponse == true){
+//           cart.splice(deleteIndex-1,1)
+//         error.innerHTML = "item deleted successfully"
+//         error.style.display = "block"
+//          displayCart()
+//     } else{
+//       alert("God save you ")
+//     }
+//     }
+   }
 
   function deleteAll() {
       if (cart.length == 0){
