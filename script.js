@@ -102,16 +102,18 @@ function deleteAny(){
   }
 
   function deleteAll() {
-    if(show.innerHTML == ""){
-        error.innerHTML = "No item to be deleted"
-        error.style.display = "block"    
-    }
-    else {
-          cart.splice(0)
+      if (cart.length == 0){
+          cart.splice(0,cart.length)
           document.getElementById("show").value = ""
           error.innerHTML = `All Cart has been deleted successfully`
           error.style.display = "block"
-      }
+        }
+        //   var userResponse = confirm("Are you sure you want to delete!!!")
+        else{
+            error.innerHTML = "No item to be deleted"
+            error.style.display = "block"    
+        }
+        displayCart()
     }
 
 // function displayCart() {
