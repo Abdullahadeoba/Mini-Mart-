@@ -10,7 +10,7 @@ function addItem(){
         cart.push(inp.value)
         document.getElementById("inp").value = ''
         show.innerHTML = ""
-        error.innerHTML = "Item added succesfully"
+        error.innerHTML = "Item added successfully"
         error.style.display = "block"
         // console.log(cart);
         displayCart()
@@ -18,98 +18,98 @@ function addItem(){
     }
 }
 
-function addFront(){
-    if(inp.value === ""){
-        error.innerHTML = "Input field cannot be empty"
-        error.style.display = "block"
-    }else{
-    cart.unshift(inp.value)
-    document.getElementById("inp").value = ""
-    show.innerHTML = cart
-    error.innerHTML = "Item added successfully"
-    error.style.display = "block"
-    displayCart()
-    }
-}
-function editAny(){
-    if(show.innerHTML == ""){
-        error.innerHTML = "No item to be deleted"
-        error.style.display = "block"
-        
-    }else{
-    var userIndex = prompt("Enter the index you want to change")
-    var replacement = prompt("What do you want to replace it with?")
-    if(userIndex ==""||replacement=="" ){
-        alert("You think say you dey wise")
-    }else{
-        cart.splice(userIndex-1,1,replacement)
-         show.innerHTML = cart
-        document.getElementById("inp").value = ""
-        error.innerHTML = "Item added succesfully"
-        error.style.display = "block"
-        displayCart()
-    }
-    }
-}
-
-
-function deleteFront(){
-    if(show.innerHTML == ""){
-        error.innerHTML = "No item to be deleted"
-        error.style.display = "block"
-    }
-    else{
-        cart.shift(show.innerHTML)
-        document.getElementById("inp").value = ""
-        show.innerHTML = cart
-        show.innerHTML = ""
-        error.innerHTML = "First item deleted errorfully"
-        // error.style.display = "block"
-        displayCart()
-    }
-  
-    }
-
-function deleteBack(){
-    if(show.innerHTML == ""){
-        error.innerHTML = "No item to be deleted"
-    }else{  
-    cart.pop(show.innerHTML)
-    document.getElementById("inp").value = ""
-    show.innerHTML = cart
-    error.innerHTML = "Last item deleted successfully"
-    error.style.display = "block"
-    displayCart()
-}
-}
-
- function deleteAny(){
-
-    if(input.value == "" ){
-        Modalerror.style.display ="block" 
-    }else{
-        cart.splice(cart-1,1)
-        displayCart()
-    }
+// function addFront(){
+//     if(inp.value === ""){
+//         error.innerHTML = "Input field cannot be empty"
+//         error.style.display = "block"
+//     }else{
+//     cart.unshift(inp.value)
+//     document.getElementById("inp").value = ""
+//     show.innerHTML = cart
+//     error.innerHTML = "Item added successfully"
+//     error.style.display = "block"
+//     displayCart()
+//     }
+// }
+// function editAny(){
 //     if(show.innerHTML == ""){
 //         error.innerHTML = "No item to be deleted"
 //         error.style.display = "block"
-//     } else{
-//     var deleteIndex = prompt("enter the index you want to delete")
-//     var userResponse = confirm("Are you sure you want to delete!!!")
-//     if (deleteIndex !== "" && userResponse == true){
-//           cart.splice(deleteIndex-1,1)
-//         error.innerHTML = "item deleted successfully"
+        
+//     }else{
+//     var userIndex = prompt("Enter the index you want to change")
+//     var replacement = prompt("What do you want to replace it with?")
+//     if(userIndex ==""||replacement=="" ){
+//         alert("You think say you dey wise")
+//     }else{
+//         cart.splice(userIndex-1,1,replacement)
+//          show.innerHTML = cart
+//         document.getElementById("inp").value = ""
+//         error.innerHTML = "Item added successfully"
 //         error.style.display = "block"
-//          displayCart()
-//     } else{
-//       alert("God save you ")
+//         displayCart()
 //     }
 //     }
-   }
+// }
+
+
+// function deleteFront(){
+//     if(show.innerHTML == ""){
+//         error.innerHTML = "No item to be deleted"
+//         error.style.display = "block"
+//     }
+//     else{
+//         cart.shift(show.innerHTML)
+//         document.getElementById("inp").value = ""
+//         show.innerHTML = cart
+//         show.innerHTML = ""
+//         success.innerHTML = "First item deleted successfully"
+//         success.style.display = "block"
+//         displayCart()
+//     }
+  
+//     }
+
+// function deleteBack(){
+//     if(show.innerHTML == ""){
+//         error.innerHTML = "No item to be deleted"
+//     }else{  
+//     cart.pop(show.innerHTML)
+//     document.getElementById("inp").value = ""
+//     show.innerHTML = cart
+//     error.innerHTML = "Last item deleted successfully"
+//     error.style.display = "block"
+//     displayCart()
+// }
+// }
+
+//  function deleteAny(){
+
+//     if(input.value == "" ){
+//         Modalerror.style.display ="block" 
+//     }else{
+//         cart.splice(cart-1,1)
+//         displayCart()
+//     }
+// //     if(show.innerHTML == ""){
+// //         error.innerHTML = "No item to be deleted"
+// //         error.style.display = "block"
+// //     } else{
+// //     var deleteIndex = prompt("enter the index you want to delete")
+// //     var userResponse = confirm("Are you sure you want to delete!!!")
+// //     if (deleteIndex !== "" && userResponse == true){
+// //           cart.splice(deleteIndex-1,1)
+// //         error.innerHTML = "item deleted successfully"
+// //         error.style.display = "block"
+// //          displayCart()
+// //     } else{
+// //       alert("God save you ")
+// //     }
+// //     }
+//    }
 
   function deleteAll() {
-      if (cart.length == 0){
+      if (cart.length < 0){
           cart.splice(0,cart.length)
           document.getElementById("show").value = ""
           error.innerHTML = `All Cart has been deleted successfully`
@@ -139,7 +139,7 @@ function displayCart(){
     if(cart.length==0){
     show.innerHTML = `<h1 style="text-align:center;color:white;font-weight:bolder;">There are currently No Items</h1>`
     error.innerHTML = "No Items to be deleted"
-    error.style.display = "block"
+    error.style.display = "none"
     
     }else{
         show.innerHTML = ""
@@ -165,28 +165,25 @@ function displayCart(){
     } 
 }
 
-function deleteUser(){
-    cart.splice(cart-1,1)
+function deleteUser(index){
+    cart.splice(index,1)
     error.innerHTML = "Item deleted successfully"
     displayCart()
  }
  
  
-//  function editUser(){
-//    var edit = document.getElementById("inp").value
+ function editUser(){
+ var edit = document .getElementById("inp").value = cart
+   if( edit == false)
+   update.style.display = "block"
+   updateItems()
+ }
 
-//    if(edit = true){
-//     updateDtails()
-//    }
-
-//  }
-
-//  function updateDtails(){
-//     var newDetails = {
+ function updateItems(){
+//     var newItems = {
 //     cart : editProduct.value,
 //    }
-//     cart.splice(i,1,newDetails)
-//     // console.log(allStudents)
-//     displayCart()
-//     editDiv.innerHTML = ""    
-//  }
+    cart.splice(i,1,replacement)
+    displayCart()
+      
+ }
