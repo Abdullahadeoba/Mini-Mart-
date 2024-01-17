@@ -174,7 +174,5 @@ function deleteUser(index){
   cart.splice(index,1,input)
   document.getElementById("inp").value = ""
   displayCart()
-  s.innerHTML = "Cart edited successfully"
-  s.style.display = "none"
   
  }
