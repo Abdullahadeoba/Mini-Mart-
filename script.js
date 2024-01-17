@@ -116,6 +116,8 @@ function addItem(){
         else{
             cart.splice(0,cart.length)
             document.getElementById("show").value = ""
+            success.innerHTML = "All cart deleted successfuly"
+            success.style.display = "block"
             displayCart()
         }
     }
@@ -171,8 +173,9 @@ function deleteUser(index){
  
  function editUser(index){
   var input = editInput.value
-  cart.splice(index,1,input)
+  cart.splice(index-1,1,input)
   document.getElementById("inp").value = ""
   displayCart()
+  document.getElementById("editInput").value = ""
   
  }
