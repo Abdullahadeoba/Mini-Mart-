@@ -43,9 +43,8 @@
         <div class="alert alert-danger p-2 text-center fw-bolder fs-7 "  style="display: none;" id="error"></div>
         <input type="text" class="form-control shadow-none form-control-sm my-2" id="inp" placeholder="Input you items">
         <button class="w-100 btn btn-outline-danger my-2 btn-sm fw-bolder" onclick="addItem()">Submit</button>
-        <!-- <button class="w-100 btn btn-outline-danger my-2 btn-sm fw-bolder" id="update" style="display: none;" onclick="updateItems()">Update Item</button> -->
-        <!-- <div class="disp"></div> -->
-        <!-- <div class="editDiv" onclick="editDiv()"></div> -->
+      <!-- <h1 style="text-align:center;color:white;font-weight:bolder;" id="Item">There are currently No Items</h1> -->
+        
         <table class="table table-ordered border-danger" id="show">
         </table>
         <!-- Button trigger modal -->
@@ -70,7 +69,7 @@
   </div>
 </div>
         <div class=" container-fluid btn mx-auto col-12 shadow-sm">
-            <button class="mt-4 w-50 btn btn-primary  mx-auto" onclick="deleteAll()">Delete All</button>
+            <button class="mt-4 w-50 btn btn-primary  mx-auto" id="deleteBtn" style="display: none;" onclick="deleteAll()">Delete All</button>
         </div> 
     </div>
     <script src="/script.js"></script>

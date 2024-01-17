@@ -14,9 +14,23 @@ function addItem(){
         error.style.display = "block"
         // console.log(cart);
         displayCart()
+        deleteBtn.style.display = "block"
         
     }
 }
+function deleteAll() {
+    if (cart.length == 0){
+        error.innerHTML = "No item to be deleted"
+        error.style.display = "block"    
+      }
+      else{
+          cart.splice(0,cart.length)
+          document.getElementById("show").value = ""
+          success.innerHTML = "All cart deleted successfuly"
+          success.style.display = "block"
+          displayCart()
+      }
+  }
 
 // function addFront(){
 //     if(inp.value === ""){
@@ -108,19 +122,7 @@ function addItem(){
 // //     }
 //    }
 
-  function deleteAll() {
-      if (cart.length == 0){
-          error.innerHTML = "No item to be deleted"
-          error.style.display = "block"    
-        }
-        else{
-            cart.splice(0,cart.length)
-            document.getElementById("show").value = ""
-            success.innerHTML = "All cart deleted successfuly"
-            success.style.display = "block"
-            displayCart()
-        }
-    }
+  
 
 // function displayCart() {
 //     show.innerHTML = ""
