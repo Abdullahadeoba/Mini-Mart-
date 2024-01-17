@@ -109,18 +109,15 @@ function addItem(){
 //    }
 
   function deleteAll() {
-      if (cart.length < 0){
-          cart.splice(0,cart.length)
-          document.getElementById("show").value = ""
-          error.innerHTML = `All Cart has been deleted successfully`
-          error.style.display = "block"
+      if (cart.length == 0){
+          error.innerHTML = "No item to be deleted"
+          error.style.display = "block"    
         }
-        //   var userResponse = confirm("Are you sure you want to delete!!!")
         else{
-            error.innerHTML = "No item to be deleted"
-            error.style.display = "block"    
+            cart.splice(0,cart.length)
+            document.getElementById("show").value = ""
+            displayCart()
         }
-        displayCart()
     }
 
 // function displayCart() {
@@ -136,7 +133,7 @@ function addItem(){
 // }
 
 function displayCart(){
-    if(cart.length==0){
+    if(cart.length === 0){
     show.innerHTML = `<h1 style="text-align:center;color:white;font-weight:bolder;">There are currently No Items</h1>`
     error.innerHTML = "No Items to be deleted"
     error.style.display = "none"
@@ -157,7 +154,7 @@ function displayCart(){
                 <td>${cart[i]}</td>
                 <td>
                    <button  onclick="deleteUser(${i})" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                   <button  onclick="editUser(${i})" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                   <button  onclick="editUser(${i})" class="btn btn-warning float-end" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fas fa-edit"></i></button>
                    </td>
                    </tr>
                    `   
@@ -172,18 +169,12 @@ function deleteUser(index){
  }
  
  
- function editUser(){
- var edit = document .getElementById("inp").value = cart
-   if( edit == false)
-   update.style.display = "block"
-   updateItems()
- }
-
- function updateItems(){
-//     var newItems = {
-//     cart : editProduct.value,
-//    }
-    cart.splice(i,1,replacement)
-    displayCart()
-      
+ function editUser(index){
+  var input = editInput.value
+  cart.splice(index,1,input)
+  document.getElementById("inp").value = ""
+  displayCart()
+  s.innerHTML = "Cart edited successfully"
+  s.style.display = "none"
+  
  }
