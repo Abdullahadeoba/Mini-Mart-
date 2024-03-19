@@ -42,7 +42,7 @@ function deleteAll() {
           setTimeout(() => {
             success.style.display = "none" 
         }, 3000); 
-        
+
           displayCart()
       }
   }
@@ -188,14 +188,13 @@ function deleteUser(index){
  }
  
  
- function editUser(index){
-    editInput = prompt("Enter your replacement")
-
+ function editUser(){
+    var start = Number(prompt("Enter the number you want to edit"))
+   var editInput = prompt("Enter your replacement")
 //   var input = editInput.value
-  cart.splice(index-1,1,editInput.value)
-  cart = editInput.value
-  document.getElementById("inp").value = ""
+  cart.splice(start-1,1,editInput)
+//   document.getElementById("inp").value = ""
   displayCart()
-  document.getElementById("editInput").value = ""
+//   document.getElementById("editInput").value = ""
   
  }
