@@ -42,6 +42,7 @@ function deleteAll() {
           setTimeout(() => {
             success.style.display = "none" 
         }, 3000); 
+        
           displayCart()
       }
   }
@@ -189,7 +190,7 @@ function deleteUser(index){
  
  function editUser(index){
     editInput = prompt("Enter your replacement")
-    
+
 //   var input = editInput.value
   cart.splice(index-1,1,editInput.value)
   cart = editInput.value
