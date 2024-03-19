@@ -188,8 +188,11 @@ function deleteUser(index){
  
  
  function editUser(index){
-  var input = editInput.value
-  cart.splice(index-1,1,input)
+    editInput = prompt("Enter your replacement")
+    
+//   var input = editInput.value
+  cart.splice(index-1,1,editInput.value)
+  cart = editInput.value
   document.getElementById("inp").value = ""
   displayCart()
   document.getElementById("editInput").value = ""
