@@ -1,9 +1,14 @@
 var cart = []
-
+if(cart.length === 0){
+    show.innerHTML = `<h1 style="text-align:center;color:white;font-weight:bolder;">There are currently No Items</h1>`
+}
 function addItem(){
     if(inp.value === ""){
         error.innerHTML = "Input field cannot be empty"
         error.style.display = "block"
+        setTimeout(() => {
+            error.style.display = "none" 
+        }, 3000); 
     }
     else{
         error.style.display = "none"
@@ -12,6 +17,9 @@ function addItem(){
         show.innerHTML = ""
         error.innerHTML = "Item added successfully"
         error.style.display = "block"
+        setTimeout(() => {
+            error.style.display = "none" 
+        }, 3000); 
         // console.log(cart);
         displayCart()
         deleteBtn.style.display = "block"
@@ -21,13 +29,19 @@ function addItem(){
 function deleteAll() {
     if (cart.length == 0){
         error.innerHTML = "No item to be deleted"
-        error.style.display = "block"    
+        error.style.display = "block"   
+        setTimeout(() => {
+            error.style.display = "none" 
+        }, 3000); 
       }
       else{
           cart.splice(0,cart.length)
           document.getElementById("show").value = ""
           success.innerHTML = "All cart deleted successfuly"
           success.style.display = "block"
+          setTimeout(() => {
+            success.style.display = "none" 
+        }, 3000); 
           displayCart()
       }
   }
@@ -137,12 +151,13 @@ function deleteAll() {
 // }
 
 function displayCart(){
-    if(cart.length === 0){
-    show.innerHTML = `<h1 style="text-align:center;color:white;font-weight:bolder;">There are currently No Items</h1>`
-    error.innerHTML = "No Items to be deleted"
-    error.style.display = "none"
     
-    }else{
+    // error.innerHTML = "No Items to be deleted"
+    // setTimeout(() => {
+    //     error.style.display = "none"
+    // }, 3000);
+    
+    //   }if(inp.value !== ""){
         show.innerHTML = ""
         show.innerHTML += `
         <tr>
@@ -164,7 +179,6 @@ function displayCart(){
                    `   
         }
     } 
-}
 
 function deleteUser(index){
     cart.splice(index,1)
